@@ -84,12 +84,23 @@ python global "INSERT VERSION"
 
 ## Bazzite
 
-### Devbox
+### Coding
+
+#### Devbox
 On Bazzite I install [Devbox](https://www.jetpack.io/devbox/) instead of using NVM or PyENV.
 
 It's easy to install just open the konsole and type:
 ```
 fleek add devbox
+fleek apply
+```
+
+#### Visual Studio Code
+Myself I don't like the VSCode flatpak so I use other distributions.
+
+On Bazzite I use the nix package:
+```
+fleek add vscode
 fleek apply
 ```
 
