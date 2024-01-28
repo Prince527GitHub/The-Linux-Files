@@ -35,6 +35,29 @@ Follow the guide on [Decky's Github](https://github.com/SteamDeckHomebrew/decky-
 Distrobox is a tool to run linux containers which can allow you to install packages without modifying the read only system. 
 It is preinstalled on SteamOS and Bazzite.
 
+#### Urn
+I've started getting into speedrunning and needed a timer so I use [Urn](https://github.com/paoloose/urn)
+I tried installing it with fleek on Bazzite but no luck, so I use a distrobox.
+
+First setup an archlinux distrobox:
+```
+distrobox create --name arch --image archlinux
+distrobox enter arch
+```
+
+Now in the container we will setup [ame](https://getcryst.al/site/docs/amethyst/getting-started) *(an aur helper)*
+```
+sudo pacman -S --needed base-devel pacman-contrib cargo
+git clone https://git.getcryst.al/crystal/pkgbuilds/ame
+cd ame && makepkg -si
+```
+
+With that installed just use it to install Urn
+```
+ame install urn-git
+distrobox-export --app urn
+```
+
 ### Coding
 I personnally install nodejs and python on my systems.
 
@@ -60,5 +83,14 @@ python global "INSERT VERSION"
 ## SteamOS
 
 ## Bazzite
+
+### Devbox
+On Bazzite I install [Devbox](https://www.jetpack.io/devbox/) instead of using NVM or PyENV.
+
+It's easy to install just open the konsole and type:
+```
+fleek add devbox
+fleek apply
+```
 
 ## Windows
